@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Email Address Validation</title>
+
+	<script type="text/javascript">
+		function validateEmail(){
+			var i;
+			var str = document.my_form.Email_txt.value;
+			var index_at = str.indexOf("@");
+			var len = str.length;
+			var index_dot = str.indexOf(".");
+			var emailID = document.my_form.Email_txt;
+
+			if((emailID.value == null) || (emailID.value == " ")){
+				alert("Please Enter your Email ID");
+				emailID.focus();
+				return false;
+			}
+
+			if(str.indexOf(".") == -1 || str.indexOf(".") == 0 || str.indexOf("@") == -1 || str.indexOf(".") == index_at || str.indexOf("@", index_at + 1) != -1 || str.indexOf(" ") != -1){
+
+				alert("Invalid Email Id");
+				return false;
+			}
+
+			return true;
+		}
+	</script>
+
+</head>
+<body>
+
+	<form name="my_form" onsubmit="return validateEmail()">
+		Email Id : <input type="text" name="Email_txt"><br><br>
+		<input type="submit" name="Submit">
+	</form>
+
+</body>
+</html>
