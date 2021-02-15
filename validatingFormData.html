@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Validating form data like mandatory feilds and email feild</title>
+	<script type="text/javascript">
+		function validateForm(){
+			var name = document.myform.name.value;
+			var password = document.myform.password.value;
+			var confirmPassword = document.myform.password2.value;
+			var email = document.myform.email.value;
+
+			/*Check Valid Username*/
+			if(name == null || name == "") {
+				alert("Name can't be blank");
+				return false;
+			}
+
+			/*Check Valid Password*/
+			else if(password.length < 6 ){
+				alert("Password must be atleast 6 character long");
+				return false;
+			}
+
+			/*Check Valid Confirm Password*/
+			else if(password != confirmPassword){
+				alert("Password doesn't match");
+				return false;
+			}
+
+			/*Check Valid Email Id*/
+			else{
+				var str = document.myform.Email_txt.value;
+				var index_at = str.indexOf("@");
+				var len = str.length;
+				var index_dot = str.indexOf(".");
+				var emailID = document.myform.Email_txt;
+
+				if((emailID.value == null) || (emailID.value == " ")){
+					alert("Please Enter your Email ID");
+					emailID.focus();
+					return false;
+				}
+
+				if(str.indexOf(".") == -1 || str.indexOf(".") == 0 || str.indexOf("@") == -1 || str.indexOf(".") == index_at || str.indexOf("@", index_at + 1) != -1 || str.indexOf(" ") != -1){
+
+					alert("Invalid Email Id");
+					return false;
+				}
+
+				return true;
+			}
+		}
+	</script>
+</head>
+<body>
+	<form name="myform" onsubmit="return validateForm()">
+		Username : <input type="text" name="name"><br><br>
+		Password : <input type="password" name="password"><br><br>
+		Confirm Password : <input type="password" name="password2"><br><br>
+		Email Id : <input type="text" name="email"><br><br>
+		<input type="submit" name="Register">
+	</form>
+</body>
+</html>
