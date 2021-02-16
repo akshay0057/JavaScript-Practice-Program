@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sorting An Array</title>
+</head>
+<body>
+	<button onclick="myFunction()">Try it</button>
+	<p id = "demo"></p>
+
+	<script type="text/javascript">
+		var fruits = ["Banana", "Orange", "Apple", "Mangoes"];
+		document.getElementById("demo").innerHTML = fruits;
+		
+		function myFunction(){
+			fruits.sort();
+			document.getElementById("demo").innerHTML = fruits;
+		}
+	</script>
+</body>
+</html>
