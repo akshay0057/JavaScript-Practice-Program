@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Check Whether  textbox is either empty or not</title>
+	<script type="text/javascript">
+		function myFunt(textbox){
+			if(textbox == null || textbox.value.length == 0){
+				alert("Textbox is empty");
+				return false;
+			}
+			return true;
+		}
+	</script>
+</head>
+<body>
+	<form>
+		Text Box : <input type="text" name="textbox"><br>
+		<input type="submit" name="submit" onclick="return myFunt(textbox)">
+	</form>
+</body>
+</html>
